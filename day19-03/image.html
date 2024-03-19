@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one>div {
+            width: 400px;
+            height: 400px;
+        }
+        #one>div>img{
+            width: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="one"></div>
+</body>
+<!-- image script -->
+<script>
+    let imageObj = [
+        { img: "https://www.rnwmultimedia.edu.in/new_panel/uploads/city_image-1689422869872-961501515.png", 
+        title: "RNW", 
+        location: "Surat" 
+        },
+        { img: "https://www.rnwmultimedia.edu.in/new_panel/uploads/city_image-1689571253161-647992325.png", 
+        title: "RNW", 
+        location: "AHM" 
+        },
+        { img: "https://www.rnwmultimedia.edu.in/new_panel/uploads/city_image-1689422909981-84113364.png", 
+        title: "RNW", 
+        location: "Rajkot" 
+        },
+        { img: "https://www.rnwmultimedia.edu.in/new_panel/uploads/city_image-1689422920706-236410409.png", 
+        title: "RNW", 
+        location: "Amreli" 
+        },
+    ];
+
+    let a = document.getElementById("one");
+    a.style.display = "flex";
+
+    imageObj.forEach(function(el){
+        let div2 = document.createElement("div"); // for div
+
+        let img2 = document.createElement("img"); // for image
+        img2.src = el.img;
+
+        let h2 = document.createElement("h2"); // for title
+        h2.innerText = el.title;
+
+        let p = document.createElement("p") // for location
+        p.innerText = el.location;
+
+        div2.append(img2,h2,p);
+        a.append(div2);
+    })
+</script>
+
+</html>

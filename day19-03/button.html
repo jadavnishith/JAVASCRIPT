@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            color: aliceblue;
+            padding: 20px;
+        }
+
+        div>button:nth-child(1) {
+            background-color: red;
+        }
+
+        div>button:nth-child(1) {
+            background-color: violet;
+        }
+
+        div>button:nth-child(1) {
+            background-color: blue;
+        }
+
+        div>button:nth-child(1) {
+            background-color: yellow;
+        }
+
+        div>button:nth-child(5) {
+            background-color: green;
+        }
+
+        body {
+            background-image: repeating-linear-gradient(135deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 10px, transparent 10px, transparent 11px), repeating-linear-gradient(22.5deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 10px, transparent 10px, transparent 11px), linear-gradient(90deg, hsl(194, 74%, 56%), hsl(266, 74%, 56%), hsl(338, 74%, 56%), hsl(50, 74%, 56%), hsl(122, 74%, 56%));
+        }
+    </style>
+</head>
+
+<body>
+    <div id="one"></div>
+</body>
+<!-- button script -->
+<script>
+    let obj = [
+        { name: "one", bg: "red" },
+        { name: "two", bg: "green" },
+        { name: "three", bg: "yellow" },
+        { name: "four", bg: "aqua" },
+        { name: "five", bg: "red" },
+    ];
+
+    let a = document.getElementById("one");
+
+    for (let i=0; i<obj.length; i++){
+        let btn = document.createElement("button");
+        btn.innerText = obj[i].name;
+        btn.style.backgroundColor = obj[i].bg;
+        console.log(btn);
+        a.append(btn)
+    }
+</script>
+
+</html>
